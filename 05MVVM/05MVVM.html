@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h4>1.架构模型：model（对应data中的数据）-view模板-viewmodel（vue实例对象）<br>2.在简单案例中，页面显示的div即为View，data中的数据为Model，而new实例化的Vue，即为最核心的ViewModel。
+            <br>3.Data中的所有属性都出现在vm身上，vm身上的所有属性，及Vue原型上所有的属性，在vue模板中都能直接使用。
+        </h4>
+        <h4>---------------------------------------------------</h4>
+        <img src="../images/MVVM.jpg" alt="MVVM模型">
+        <h1>名字：{{name}}</h1>
+        <h1>电话：{{tel}}</h1>
+    </div>
+
+</body>
+<script>
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: 'dahua',
+            tel: '132456',
+        }
+    })
+    console.log(vm)
+</script>
+
+</html>

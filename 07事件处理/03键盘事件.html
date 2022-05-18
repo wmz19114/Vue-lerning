@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<!-- Vue给常用按键起了别名：
+回车enter 	删除delete(包括退格和删除两种在内) 
+退出esc		空格space
+换行tab		上up	下down		左left	右right -->
+
+<body>
+    <div id="root">
+        <h2>{{name}}欢迎学习</h2>
+        <input type="text" placeholder="输入信息 按下回车获取" @keyup="showInfo">
+    </div>
+
+</body>
+<script>
+    Vue.config.productionTip = false
+    new Vue({
+        el: '#root',
+        data: {
+            name: 'dahua'
+
+        },
+        methods: {
+            showInfo(e) {
+                console.log(e.target.value, e.key)
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1> hello {{name}} </h1>
+        <h1>今天学习单、双向数据绑定</h1>
+        <h3>9. 单向数据绑定，数据由data流向页面。简写：</h3>
+        <h3>10. 数据双向绑定：v-model只能用在表单元素（输入元素，有value值的），双向流动</h3>
+        <a v-bind:href="school.url">点我去{{school.name}}学习</a><br>
+        <input type="text" v-model="school.url">
+    </div>
+
+    <script>
+        Vue.config.productionTip = false; //设置为 false 以阻止 vue 在启动时生成生产提示。
+
+        const x = new Vue({ //创建vue实例
+            el: '#root', //用于指定当前vue的服务对象，值通常为css选择器字符串，等同于el:document.getElementById('root')
+            data: { //用于存储数据 对象有el定，暂时用对象来做，以后用函数
+                name: 'Dahua',
+                age: '18',
+                school: {
+                    name: '我的仓库',
+                    url: 'https://github.com/wmz19114?tab=repositories'
+
+                }
+            }
+
+
+        });
+    </script>
+
+</body>
+
+</html>

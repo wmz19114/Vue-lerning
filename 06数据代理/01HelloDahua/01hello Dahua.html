@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1> hello {{name}} </h1>
+
+    </div>
+
+    <script>
+        Vue.config.productionTip = false; //设置为 false 以阻止 vue 在启动时生成生产提示。
+
+        const x = new Vue({ //创建vue实例
+            el: '#root', //用于指定当前vue的服务对象，值通常为css选择器字符串，等同于el:document.getElementById('root')
+            data: { //用于存储数据 对象有el定，暂时用对象来做，以后用函数
+                name: 'Dahua',
+
+            }
+
+
+        });
+    </script>
+
+</body>
+
+</html>

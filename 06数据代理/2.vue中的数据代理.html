@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1>姓名：{{_data.name}}</h1>
+        <h1>年龄：{{age}}</h1>
+    </div>
+    <h5>vm得到数据存在_data中，但是本身并没有数据即vm.数据，vm通过getter读取_data中的数据，通过数据代理添加到自身中，便得到了vm.数据<br>数据代理可以使得_data.数据与vm.数据捆绑在一起<br>修改_data,则通过getter获取变动修改vm.数据;修改显示内容即setter修改vm.name,则通过数据代理反馈到_data.数据身上。</h5>
+    <script>
+        Vue.config.productionTip = false
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                name: 'dahua',
+                age: '23'
+
+            }
+        })
+    </script>
+</body>
+
+</html>

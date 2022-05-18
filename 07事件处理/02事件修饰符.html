@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1>同学你好</h1>
+        <a href="https://github.com/wmz19114?tab=repositories" @click.prevent="showInfo">点我提示信息</a>
+    </div>
+    <h6>修饰符可以连续使用@click.stop.prevent=””有先后顺序但是最终效果一样，影响不大。</h6>
+    <h6>修饰符可以连续使用@keyup.ctrl.y =””同时按下control和y触发</h6>
+</body>
+<script>
+    Vue.config.productionTip = false
+    new Vue({
+        el: '#root',
+        data: {
+            name: 'dahua'
+        },
+        methods: {
+            showInfo() {
+                alert('同学你好！')
+            }
+        }
+
+    })
+</script>
+
+</html>

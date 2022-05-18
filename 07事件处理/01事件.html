@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1>欢迎到此{{name}}</h1>
+        <button v-on:click="showInfo">点我点我</button>
+        <button v-on:click="showInfo2(233)">点我点我233</button>
+        <h6>a) Vue2：事件有传参时如果不占位会覆盖event<br> b) Vue3：事件有传参时不影响event，<br> 事件回调需要配置在methods中，最终会在vm上
+        </h6>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false
+
+
+
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: '学习'
+        },
+        methods: {
+            showInfo() {
+                alert('学个屁')
+            },
+            showInfo2(number) {
+                alert('快学吧！')
+                console.log(number)
+                console.log(event)
+            },
+
+        }
+    })
+</script>
+
+</html>
